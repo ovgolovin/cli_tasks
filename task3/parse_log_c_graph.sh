@@ -35,7 +35,7 @@ grep  "$date\s12.*\/resume" "$file"| cut -f 1,2,8 | sed -E "s/(.*)ms/\1/"|  awk 
 grep  "$date\s12.*\/vacancy" "$file"| cut -f 1,2,8 | sed -E "s/(.*)ms/\1/"|  awk '{print $1 " " $2 " =vacancy " $3}' >>plot_data~
 grep  "$date\s12.*\/user" "$file"| cut -f 1,2,8 | sed -E "s/(.*)ms/\1/"|   awk '{print $1 " " $2 " =user " $3}' >>plot_data~
 
-tplot -if plot_data~ -o graph.png -dk dots
+tplot -if plot_data~ -or 1280x1024 -of png -o quantile_plot_95.png -dk 'within[-] quantile 600 0.95'
 
 rm plot_data~
 
