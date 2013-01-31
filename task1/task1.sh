@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function readAndDisplay {
 	IFS=$'\n'
