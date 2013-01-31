@@ -2,7 +2,7 @@
 
 function readAndDisplay {
 	IFS=$'\n'
-	files=($(find . -maxdepth 1 -name "*.txt"))
+	files=($(find . -maxdepth 1 -type f -name "*.txt"))
 	IFS=$OIFS
 	length=${#files[@]}
 
