@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function display_help {
 	echo "Requires 2 parameters."
@@ -37,6 +37,7 @@ for time in "${response_times[@]}"
 do
 	total_time=$(echo $total_time + $time | bc)
 done
+echo
 echo "Overall response time on day $date within time frame from 12:00 to 13:00 is $total_time ms"
 
 num="${#response_times[@]}"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function display_help {
 	echo "Requires 2 parameters."

@@ -6,6 +6,8 @@ import random
 import time
 from datetime import datetime, timedelta
 
+period_expectation = 10000
+
 
 def generate_url_and_code():
     def resume():
@@ -27,7 +29,7 @@ with open('log.txt','w') as f:
     time = datetime(year=2013, month=1, day=20, hour=12, minute=00) + timedelta(minutes=-1)
     timeend = time + timedelta(hours=1, minutes=2)
     while(True):
-        time = time + timedelta(milliseconds = random.normalvariate(1000, 200))
+        time = time + timedelta(milliseconds = random.normalvariate(period_expectation, 2000))
         url, code = generate_url_and_code()
         out = '\t'.join([time.strftime('%Y-%m-%d\t%H:%M:%S') + ',' + '{:03.0f}'.format(time.microsecond / 1000),
                 random.choice(('info', 'warn', 'error')),
